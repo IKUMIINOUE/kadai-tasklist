@@ -2,14 +2,6 @@
 <%= @task.id %>
 のタスク編集ページ</h1>
 
-<%= form_with(model:@task,lacal:true) do |f|%>
+<%= render "form" , task: @task %>
 
-<%= f.label :content,"メッセージ"%>
-
-<%= f.text_field :content %>
-
-<%= f.submit "投稿"%>
-
-<% end %>
-
-<%= link_to "一覧へ戻る",tasks_path%>
+<%= link_to "一覧へ戻る",tasks_path%> 
