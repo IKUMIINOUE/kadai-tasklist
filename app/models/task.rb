@@ -3,6 +3,6 @@ class Task < ApplicationRecord
         maximum: 255
     }
     validates :status, presence: true, length: {
-        maximum: 255
+        maximum: 10
     }
 end
