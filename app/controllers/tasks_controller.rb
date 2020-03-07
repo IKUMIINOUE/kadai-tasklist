@@ -5,8 +5,6 @@ class TasksController < ApplicationController
     end
 
     def show
-        set_task
-        
     end
 
     def new 
@@ -15,7 +13,6 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.new(task_params)
-
         if @task.save
             flash[:success] = "Taskが正常に追加されました"
             redirect_to @task
@@ -26,11 +23,9 @@ class TasksController < ApplicationController
     end
 
     def edit
-       set_task
     end
 
     def update
-       set_task
         if @task.update(task_params)
             flash[:success] = "Taskは正常に更新されました"
             redirect_to @task
