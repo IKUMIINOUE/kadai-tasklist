@@ -8,17 +8,17 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
-        <li class="nav-item"><%= link_to "Tasks", tasks, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "Tasks", tasks_path, class: "nav-link" %></li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
           <ul class="dropdown-menu dropdown-menu-right">
-            <li class="dropdown-item"><%= link_to "Tasks", tasks(current_user) %></li>
+            <li class="dropdown-item"><%= link_to "Tasks", tasks_path(current_user) %></li>
             <li class="dropdown-divider"></li>
-            <li class="dropdown-item">Logout</li>
+            <li class="dropdown-item"><%= link_to "Logout",logout_path,method: :delete %></li>
           </ul>
         </li>
         <% else %> 
-        <li class="nav-item"><%= link_to "Signup", new_user_path, class: "btn btn-lg btn-primary" %></li>
+        <li class="nav-item"><%= link_to "Signup", signup_path, class: "btn btn-lg btn-primary" %></li>
         <li class="nav-item"><%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %></li>
         <% end %>
       </ul>
